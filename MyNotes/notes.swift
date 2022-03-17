@@ -25,7 +25,7 @@ class Notes {
         case close
     }
     
-    //ЗАПРОС ДЕЙСТВИЯ У ПОЛЬЗОВАТЕЛЯ
+    //REQUEST AN ACTION FROM USER
     func requestAction () -> Actions {
         var input: String?
         var inputNumber: Int?
@@ -55,7 +55,7 @@ class Notes {
         }
     }
 
-    //ПРОВЕРКА НА Int
+    //CHECK FOR Int
     func isInt (_ readLineContent: String?) -> Bool {
         var intValue: Int?
         intValue = Int(readLineContent!)
@@ -67,7 +67,7 @@ class Notes {
         return false
     }
     
-    //ДОБАВЛЕНИЕ ЗАМЕТКИ
+    //ADDING A NOTE
     func add () {
         var name: String? = ""
         print("\n\(projectStatuses.action) Enter a title for your note \(projectStatuses.action)")
@@ -94,7 +94,7 @@ class Notes {
         allNotes.append(note)
     }
     
-    //УДАЛЕНИЕ ЗАМЕТКИ
+    //DELETING A NOTE
     func delete () {
         printListOfNotes()
         if allNotes.count > 0 {
@@ -121,7 +121,7 @@ class Notes {
         }
     }
         
-    //РЕДАКТИРОВАНИЕ ЗАМЕТКИ
+    //EDITING A NOTE
     func edit () {
         printListOfNotes()
         print(" \(projectStatuses.action) Please enter the note number you want to edit \(projectStatuses.action)")
@@ -153,7 +153,7 @@ class Notes {
     }
         
     
-    //ВЫВОД СПИСКА ЗАМЕТОК
+    //DISPLAY LIST OF NOTES
     func printListOfNotes () {
         if allNotes.isEmpty {
             print("\(projectStatuses.error) You don't have any notes \(projectStatuses.error)")
@@ -166,7 +166,7 @@ class Notes {
         }
     }
     
-    //ПРОСМОТР ЗАМЕТОК И ИХ СОДЕРЖИМОГО
+    //VIEWING NOTES AND THEIR CONTENT
     func view () {
         printListOfNotes()
         print("\(projectStatuses.action) If you want to check a content of some note, please enter a number of this note. Otherwise please enter <no> \(projectStatuses.action)")
@@ -196,7 +196,7 @@ class Notes {
     }
 
     
-    // СОЗДАНИЕ first_note ФАЙЛА C ЗАМЕТКОЙ ДЛЯ ПЕРВОГО ЗАПУСКА
+    // CREATING first_note FILE WITH A NOTE FOR THE FIRST LAUNCH
     func createFirstNote () {
         let fileName = "first_note.txt"
         let text: String = "@My first note@Hello, world!"
@@ -210,7 +210,7 @@ class Notes {
         }
     }
     
-    //СОЗДАНИЕ notes.txt ФАЙЛА ДЛЯ СОХРАНЕНИЯ ЗАМЕТОК
+    //CREATING notes.txt FILE TO SAVE NOTES
     func saveFile (_ file: String) {
         var text: String = ""
         for element in myNotes.allNotes {
@@ -228,7 +228,7 @@ class Notes {
         }
     }
     
-    // СОЗДАНИЕ СПИСКА ЗАМЕТОК ИЗ ФАЙЛА
+    // CREATING A LIST OF NOTES FROM THE FILE
     func createAllNotes () {
         var fileName = "notes.txt"
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
@@ -263,7 +263,7 @@ class Notes {
         }
     }
     
-    //ЗАКРЫТИЕ ПРИЛОЖЕНИЯ
+    //CLOSING THE APP
     func closeApp () {
         myNotes.saveFile("notes.txt")
         print("\(projectStatuses.ok) All your notes are saved. See you soon! :) \(projectStatuses.ok)")
