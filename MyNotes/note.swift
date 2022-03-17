@@ -16,5 +16,3 @@ class Note {
         self.content = content
     }
 }
-
-var myText = "Hello from git"
